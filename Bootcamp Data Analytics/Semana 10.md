@@ -1,1 +1,0 @@
-![[Estatistica2_Probabilidade_Amostragem.pdf]]
