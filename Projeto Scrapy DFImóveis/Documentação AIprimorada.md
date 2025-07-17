@@ -1,12 +1,3 @@
-                      
-
-```prompt
-Agora me ajude a criar uma documentação detalhada descrevendo as decisões de projeto, as principais classes, o fluxo de código e a estruturação de pastas
-```
-
-# Deep Think Thoughts
-
-[[ObsidianSync/Projeto Scrapy DFImóveis/Thoughts DeepThink]]
 
 # Documentação
 

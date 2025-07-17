@@ -1,4 +1,4 @@
-1. mover as funções de limpeza (como `limpar_area`) para uma pipeline. Isso permitiria:
+1. mover as funções de limpeza (como `limpar_area`) para uma pipeline.
 
 2. **Separação de Responsabilidades**:
 - As spiders (`extrair_urls.py` e `extrair_info.py`) devem focar apenas em extrair dados.
@@ -89,14 +89,9 @@
 **2. Refatoração das Spiders:**
 
 **extrair_urls.py:**
-
-python
-
-Copy
-
-Download
-
-# Adicionar pipeline para salvar URLs diretamente
+**extrair_info.py:**
+ **Adicionar pipeline para salvar URLs diretamente**
+```
 class SaveUrlsPipeline:
     def open_spider(self, spider):
         self.file = open("dados/raw/links_imoveis.txt", "w")
@@ -110,22 +105,18 @@ class SaveUrlsPipeline:
         self.file.close()
 
 # Modificar o parse para usar items
-def parse(self, response):
+
+```def parse(self, response):
     ...
     yield ImoveisUrlsItem(
         pagina=pagina,
         links=links_imoveis
     )
+```
 
-**extrair_info.py:**
 
-python
-
-Copy
-
-Download
-
-# Usar Item Loaders para pré-processamento
+ **Usar Item Loaders para pré-processamento**
+ ```
 from scrapy.loader import ItemLoader
 from projeto.items import ImovelItem
 
@@ -147,17 +138,12 @@ def parse(self, response):
     loader.add_css("quartos", "h6:contains('Quartos:') small::text", preprocess=preprocess_quartos)
     
     yield loader.load_item()
+```
 
 **3. Unificação do Processamento:**
 
 **processamento.py (unificado):**
-
-python
-
-Copy
-
-Download
-
+```
 def clean_data(df):
     # Limpeza consolidada
     df = clean_areas(df)
@@ -177,17 +163,12 @@ def clean_areas(df):
             .astype(float)
         )
     return df
+```
 
 **4. Pipeline de Pós-processamento:**
 
 **pipelines.py:**
-
-python
-
-Copy
-
-Download
-
+```
 from processamento import clean_data
 
 class DataCleaningPipeline:
@@ -206,18 +187,13 @@ class DataCleaningPipeline:
         file_path = "dados/processed/imoveis_final.csv"
         header = not os.path.exists(file_path)
         df.to_csv(file_path, mode="a", header=header, index=False)
+```
 
 **5. Otimização de API Google:**
 
 **google_api.py:**
-
-python
-
-Copy
-
-Download
-
-# Adicionar cache para reduzir chamadas
+ Adicionar cache para reduzir chamadas
+```
 from cachetools import cached, TTLCache
 
 cache = TTLCache(maxsize=1000, ttl=86400)  # Cache de 24h
@@ -225,28 +201,19 @@ cache = TTLCache(maxsize=1000, ttl=86400)  # Cache de 24h
 @cached(cache)
 def get_address(latitude, longitude):
     # ... implementação existente
+```
 
 **6. Configuração Centralizada:**
-
 **.env (novo arquivo):**
 
+```
 ini
-
-Copy
-
-Download
 
 GOOGLE_API_KEY=your_key_here
 MAX_CONCURRENT_REQUESTS=5
 
+
 **settings.py:**
-
-python
-
-Copy
-
-Download
-
 # Adicionar configurações
 ITEM_PIPELINES = {
     'projeto.pipelines.DataCleaningPipeline': 300,
@@ -255,38 +222,8 @@ ITEM_PIPELINES = {
 
 CONCURRENT_REQUESTS = int(os.getenv('MAX_CONCURRENT_REQUESTS', 16))
 
-### ✅ Benefícios das Melhorias:
+```
 
-1. **Fluxo Automatizado**:
-    
-    - Elimina passos manuais (JSON → TXT)
-        
-    - Processamento incremental durante coleta
-        
-2. **Manutenção Simplificada**:
-    
-    - Lógica de limpeza centralizada
-        
-    - Pré-processamento durante extração
-        
-3. **Performance Melhorada**:
-    
-    - Redução de operações redundantes
-        
-    - Cache de API externa
-        
-4. **Escalabilidade**:
-    
-    - Pipeline pronta para novos processamentos
-        
-    - Configuração centralizada
-        
-5. **Qualidade de Dados**:
-    
-    - Tratamento consistente desde a extração
-        
-    - Tipagem correta durante coleta
-        
 
 ### ⚠️ Considerações Finais:
 
@@ -300,12 +237,7 @@ CONCURRENT_REQUESTS = int(os.getenv('MAX_CONCURRENT_REQUESTS', 16))
     
 5. Crie um **Dockerfile** para ambiente reprodutível
 
-
-
-
-
-#### Nomear com Timestamp (Recomendado)
-
+#### ==Nomear com Timestamp (Recomendado)==
 ```bash
 scrapy crawl extrair_urls -o ../data/raw/urls_$(date +%Y%m%d_%H%M%S).json
 ```
