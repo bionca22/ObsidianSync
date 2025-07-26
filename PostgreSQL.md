@@ -1,3 +1,5 @@
+
+https://www.postgresql.org/docs/current/transaction-iso.html#XACT-READ-COMMITTED
 #### JSONB
 E possível utilizar o PostgreSQL de forma flexível, modelando dados de maneira que se assemelhe a um banco de dados NoSQL, como um banco de dados chave-valor ou um banco de dados orientado a documentos. 
 
