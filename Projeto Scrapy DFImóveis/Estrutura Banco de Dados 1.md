@@ -84,7 +84,32 @@ CREATE TABLE Edificio (
 );
 ```
 
-### **6. Tabela `Midia` (Para NoSQL)**
+### 6.Tabela url_imovel
+```SQL
+CREATE TABLE UrlImovel (
+    url_id SERIAL PRIMARY KEY,
+    url TEXT NOT NULL UNIQUE,
+    dominio VARCHAR(100) NOT NULL,
+    raspado BOOLEAN NOT NULL DEFAULT FALSE,
+    ultima_raspagem TIMESTAMP,
+    contagem_tentativas INT NOT NULL DEFAULT 0,
+    prioridade SMALLINT NOT NULL DEFAULT 1,
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    metadados JSONB,
+    imovel_id INT REFERENCES Imovel(imovel_id)
+);
+```
+
+>**O Que Representa o Campo prioridade?**
+É um valor numérico (SMALLINT) que indica a urgência relativa de uma URL ser raspada.
+Varia tipicamente de 1 (mais baixa) a 5 (mais alta), sendo 1 o valor padrão.
+Controla a ordem de processamento quando há múltiplas URLs na fila com referenciação da tabela imovel
+
+```SQL
+ALTER TABLE Imovel
+ALTER COLUMN ultima_atualizacao TYPE TIMESTAMP;
+```
+### **7. Tabela `Midia` (Para NoSQL)**
 
 Armazenaria dados não estruturados (será usada no NoSQL)
 
