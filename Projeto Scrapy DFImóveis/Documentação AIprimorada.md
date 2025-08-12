@@ -128,6 +128,18 @@ graph TD
 | características | binary columns | One-hot encoding de features |
 | total_andares_empr | float | Remoção de texto, tratamento de nulos |
 | coordenadas | string | Geocodificação reversa via API |
+#### Extração de Dados Principais
+
+|Campo|Seletores/Técnica|Exemplo|
+|---|---|---|
+|**ID DFI**|Regex no título|`re.search(r'ID:\s*(\d+)', ...)`|
+|**Cidade/Bairro**|CSS com `:contains`|`h6:contains('Cidade:') small::text`|
+|**Endereço**|CSS direto|`h1.mb-0.font-weight-600...::text`|
+|**Quartos/Suites**|CSS com valor padrão|`.get(default="0")`|
+|**Áreas**|CSS com fallback|`h6:contains('Área Útil:')...`|
+|**Preço**|Classe específica|`.display-5.text-warning...::text`|
+|**Características**|Lista de elementos|`ul.checkboxes li::text`|
+|**Coordenadas**|Regex em scripts|`re_first(r"latitude\s*=\s*([-+]?\d*\.\d+)")`| 
 
 ---
 
