@@ -61,4 +61,34 @@
 >❕A busca binária é um algoritmo de busca que encontra a localização de um valor específico em uma lista ordenada, enquanto o quicksort é um algoritmo de ordenação que organiza uma lista em ordem crescente ou decrescente. Em resumo, um pesquisa e o outro ordena
 
 
-📌**Mergesort:**
+📌**Mergesort:** Divide recursivamente o array em duas metades até obter sub-arrays de um elemento. Depois, ele começa a "mesclar" (merge) essas listas, unindo-as de forma ordenada até que a lista original esteja completamente ordenada.
+
+📌 **Big-O:** A **notação Big-O** serve para medir **a velocidade de crescimento de um algoritmo** .
+Ela ignora detalhes pequenos (constantes e termos menores) e mostra só o **comportamento principal** do algoritmo em grandes escalas.
+
+- **Complexidade de Tempo:** Quantas operações o algoritmo precisa realizar para completar a tarefa, em relação ao tamanho dos dados de entrada (n).
+    
+- **Complexidade de Espaço:** Quanta memória o algoritmo precisa para executar, em relação ao tamanho dos dados de entrada (n).
+	
+
+ ❕ **Níveis comuns de complexidade (do mais rápido ao mais lento):**
+
+- **O(1) – Constante:** sempre leva o mesmo tempo, não importa o tamanho dos dados.  
+    👉 Exemplo: acessar um item de uma lista pelo índice.
+    
+- **O(log n) – Logarítmico:** cresce bem devagar.  
+    👉 Exemplo: busca binária.
+    
+- **O(n) – Linear:** cresce proporcionalmente ao número de dados.  
+    👉 Exemplo: busca sequencial.
+    
+- **O(n log n) – Linearítmico:** comum em ordenações rápidas.  
+    👉 Exemplo: mergesort, quicksort (caso médio).
+    
+- **O(n²) – Quadrático:** fica lento rápido, porque faz muitos passos extras.  
+    👉 Exemplo: bubble sort, selection sort.
+    
+- **O(2^n) – Exponencial:** explode em tempo rapidamente, impraticável para entradas grandes.  
+    👉 Exemplo: força bruta em alguns problemas complexos (como mochila).
+
+	[[Apend. Algoritmos]]
