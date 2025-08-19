@@ -33,7 +33,7 @@
     
 	- Garantir estado válido do objeto
 
-	**Teoria**: Garante a _invariante de classe_ (condições que sempre devem ser verdadeiras para o objeto), implementa _inicialização determinística_
+	**Teoria**: Garante a _invariante de classe_ (condições que sempre devem ser verdadeiras para o objeto), implementa _inicialização determinística_ [[apend. PHP & POO]]
 
 	-  Atribuir valores iniciais aos atributos do objeto. 
 	- Conectar-se a um banco de dados. 
@@ -41,9 +41,17 @@
 	- Validar dados de entrada.
 
 	**Exemplo:**
-	`public function __construct($cor, $modelo) { 
-	`$this->cor = $cor;`
-	`$this->modelo = $modelo; }`
+	```PHP
+	class Point {  
+		protected int $x;  
+		protected int $y;  
+  
+		public function __construct(int $x, int $y = 0) {  
+		$this->x = $x;  
+		$this->y = $y;  
+	}  
+}
+	```
 
 #### ➡️Pilares da POO
 
@@ -57,7 +65,7 @@ Princípio de ocultação de detalhes de implementação. Ele **esconder os deta
     
 - _Interface vs. Implementação_: Separa _o que faz_ de _como faz_
 
-Ele protege os atributos de serem modificados por um código externo de forma inesperada. O encapsulamento é gerenciado pelos **modificadores de acesso**:
+Ele protege os atributos de serem modificados por um código externo de forma inesperada. O encapsulamento é gerenciado pelos **modificadores de acesso**:[[apend. PHP & POO]]
 
  - **`public`**: O atributo ou método é acessível de qualquer lugar.
     
