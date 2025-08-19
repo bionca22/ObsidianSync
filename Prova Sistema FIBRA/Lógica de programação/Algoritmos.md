@@ -1,4 +1,15 @@
 
+📌**Listas Ordenadas e Não Ordenadas**
+	- **Ordenadas:** Uma estrutura de dados onde a sequência dos elementos **não segue nenhuma relação de ordem predefinida** baseada em suas chaves ou valores. A posição de cada elemento é arbitrária e não carrega informação semântica sobre seu valor.
+		-**Inserção**: O(1) - Novos elementos são adicionados no início/fim.
+		- 
+		 - **Busca por elemento**: O(n) - Requer busca sequencial.
+		 - 
+		 - **Vantagem**: Inserções rápidas e simples.
+		 - 
+		 - **Desvantagem**: Buscas ineficientes em grandes conjuntos
+
+
 📌**Busca Sequencial (Linear Search)**
  Percorre cada elemento da estrutura (array, lista) sequencialmente, do início ao fim, até encontrar o elemento desejado ou chegar ao final.
     
