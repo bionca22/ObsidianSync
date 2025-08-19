@@ -14,6 +14,8 @@ A .NET é uma plataforma de desenvolvimento **open-source**, **cross-platform*
     
 - **Mono**: Runtime alternativo (usado em Xamarin para mobile). Foi muito usado para levar aplicações .NET para **Linux, macOS, iOS e Android**, numa época em que o .NET era restrito ao Windows. Ainda é usado em alguns cenários, como **Unity** (motor de jogos) e aplicações móveis mais antigas.
 
+-  **Garbage Collection:** (Coleta de Lixo) no .NET é um processo automatizado de gerenciamento de memória que libera o espaço de objetos que não estão mais sendo utilizados pela aplicação. Em outras palavras, ele identifica e remove objetos que não possuem mais referências, evitando vazamentos de memória e otimizando o uso dos recursos.
+
 
 📌  **Linguagens Suportadas**
 
@@ -99,6 +101,7 @@ a) .NET Framework** (Legado, Windows-only)
     
 - Repositório central de bibliotecas .NET
 
+
 ➡️**Principais Tipos de Aplicações**
 
 📌**Web**
@@ -109,8 +112,132 @@ a) .NET Framework** (Legado, Windows-only)
         
     - **Web API** (APIs RESTful)
         
-    - **Razor Pages** (Páginas com código embutido)
+    - **Razor Pages** (Páginas com código C# embutido no HTML.)
         
     - **Blazor** (Web assembly - C# no browser)
         
-    - **SignalR** (Comunicação em tempo real)
+    - **SignalR** (Comunicação em tempo real real entre servidor e cliente)
+[[apend. .NET]]
+
+#### 📌** Desktop**
+
+- **WinForms** (Legado, Windows)
+    
+- **WPF (Windows Presentation Foundation)** (Windows, XAML)
+    
+- **Windows Forms** (.NET 6+ cross-platform preview)
+    
+- **Avalonia** (Cross-platform, community)
+    
+- **MAUI** (Multi-platform App UI)
+    
+
+#### 📌** Mobile**
+
+- **Xamarin** (Legado)
+    
+- **.NET MAUI** (Sucessor do Xamarin, cross-platform)
+    
+
+#### 📌**Cloud e Microserviços**
+
+- Integração nativa com Azure
+    
+- **Docker** e containers
+    
+- **Kubernetes** orchestration
+    
+
+##### 📌Outros
+
+- **Console Applications**
+    
+- **Windows Services**
+    
+- **Machine Learning** (ML.NET). Permite treinar, construir e enviar modelos de machine learning personalizados usando C# ou F# em vários cenários de ML
+    
+- **IoT** (Internet of Things)
+    
+- **Games** (Unity usa C#)
+
+##### **📌 Async/Await**
+
+- Programaçāo assíncrona simplificada
+    
+- Não bloqueia threads
+    
+- Melhora escalabilidade
+
+**Exemplo:**
+```PHP
+public async Task<string> GetDataAsync()
+{
+    return await httpClient.GetStringAsync("url");
+}
+```
+
+
+##### 📌 LINQ (Language Integrated Query)
+
+- Ele atua como um "tradutor" entre a linguagem de programação e o banco de dados, permitindo que os desenvolvedores trabalhem com objetos em vez de escrever consultas SQL diretamente.
+
+- Consultas integradas à linguagem
+    
+- Syntax de consulta unificada para diferentes fontes
+
+
+#####  📌Dependency Injection
+
+- É um padrão de projeto de software que permite que classes recebam suas dependências de fontes externas, em vez de criá-las dentro da própria classe.
+
+- Padrão embutido no ASP.NET Core
+    
+- Inversāo de controle
+    
+- Facilita testes e manutenção
+
+❕Existem três formas principais de injetar dependências no .NET:
+
+- **[Injeção via Construtor](https://www.google.com/search?sca_esv=63ad467223b51100&cs=1&sxsrf=AE3TifNknT_SNlNsEhcOo8lOtZQwy6RSMQ%3A1755633767908&q=Inje%C3%A7%C3%A3o+via+Construtor&sa=X&ved=2ahUKEwippJy41ZePAxVdrZUCHSIdDSUQxccNegQIDhAB&mstk=AUtExfARnflT0R-Vb0DTHARpCS--U3SO5FShfH6EmHViVC9Hm-t8xF36HrOcr6P0sJQsdYnfrAssNx8XWY80wdPj0l9J12jR13nl1X2hAb23f7wQ90xSGK_769yYyCNlYD_l2GFDIgY5LOEYHZ5V-0PmeekZxvYB_JUSV1xRy-JDacJDUVG4vQeE2D6YoQBFbXEVWIXjvrL9AVFBEziKh8R1Ng6RtDWJxQl_Iue9qaGFTuZfAwIM3G803Ur-jmN22H7MYwV38a_3VgKV5_i04rdwczPl&csui=3):** As dependências são fornecidas através do construtor da classe. 
+- **[Injeção via Propriedade](https://www.google.com/search?sca_esv=63ad467223b51100&cs=1&sxsrf=AE3TifNknT_SNlNsEhcOo8lOtZQwy6RSMQ%3A1755633767908&q=Inje%C3%A7%C3%A3o+via+Propriedade&sa=X&ved=2ahUKEwippJy41ZePAxVdrZUCHSIdDSUQxccNegQIDxAB&mstk=AUtExfARnflT0R-Vb0DTHARpCS--U3SO5FShfH6EmHViVC9Hm-t8xF36HrOcr6P0sJQsdYnfrAssNx8XWY80wdPj0l9J12jR13nl1X2hAb23f7wQ90xSGK_769yYyCNlYD_l2GFDIgY5LOEYHZ5V-0PmeekZxvYB_JUSV1xRy-JDacJDUVG4vQeE2D6YoQBFbXEVWIXjvrL9AVFBEziKh8R1Ng6RtDWJxQl_Iue9qaGFTuZfAwIM3G803Ur-jmN22H7MYwV38a_3VgKV5_i04rdwczPl&csui=3):** As dependências são injetadas através de propriedades da classe. 
+- **[Injeção via Método](https://www.google.com/search?sca_esv=63ad467223b51100&cs=1&sxsrf=AE3TifNknT_SNlNsEhcOo8lOtZQwy6RSMQ%3A1755633767908&q=Inje%C3%A7%C3%A3o+via+M%C3%A9todo&sa=X&ved=2ahUKEwippJy41ZePAxVdrZUCHSIdDSUQxccNegQIHRAB&mstk=AUtExfARnflT0R-Vb0DTHARpCS--U3SO5FShfH6EmHViVC9Hm-t8xF36HrOcr6P0sJQsdYnfrAssNx8XWY80wdPj0l9J12jR13nl1X2hAb23f7wQ90xSGK_769yYyCNlYD_l2GFDIgY5LOEYHZ5V-0PmeekZxvYB_JUSV1xRy-JDacJDUVG4vQeE2D6YoQBFbXEVWIXjvrL9AVFBEziKh8R1Ng6RtDWJxQl_Iue9qaGFTuZfAwIM3G803Ur-jmN22H7MYwV38a_3VgKV5_i04rdwczPl&csui=3):** As dependências são injetadas através de parâmetros de método.
+
+```PHP
+services.AddScoped<IUserService, UserService>();
+```
+
+#####  Performance e Otimização
+
+##### 📌 Span<T> e Memory<T>
+
+- Acesso seguro a memória
+    
+- Zero allocations
+    
+- Alto desempenho
+
+#### **📌 Value Types**
+
+- struct ao invés de class
+    
+- Menos pressure no GC
+    
+- Stack allocation
+    
+
+#### **c) Benchmarking**
+
+- **BenchmarkDotNet**: Biblioteca para medição de performance
+    
+- Análise precisa de desempenho
+
+
+
+
+
+
+
+
+
+
+
