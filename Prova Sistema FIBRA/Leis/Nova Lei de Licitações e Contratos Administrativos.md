@@ -86,7 +86,7 @@ Pontos cruciais para um Analista de Sistemas:
     2. **Justificativa**: O produto é de fornecedor único, não existindo alternativa no mercado.
 
     3.  **Procedimento**:
-    
+    - [x] 
     - A prefeitura publica um edital convidando empresas especializadas para uma fase de **diálogo**.
         
     - Realiza reuniões e sessões técnicas com as empresas interessadas para discutir as melhores abordagens, tecnologias e viabilidade.
