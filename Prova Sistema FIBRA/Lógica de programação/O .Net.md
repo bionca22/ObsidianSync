@@ -206,17 +206,17 @@ public async Task<string> GetDataAsync()
 services.AddScoped<IUserService, UserService>();
 ```
 
-#####  Performance e Otimização
+#####  ➡️Performance e Otimização
 
 ##### 📌 Span<T> e Memory<T>
 
-- Acesso seguro a memória
+	- Acesso seguro a memória
     
-- Zero allocations
+	- Zero allocations
     
-- Alto desempenho
+	- Alto desempenho
 
-#### **📌 Value Types**
+### 📌 Value Types
 
 - struct ao invés de class
     
@@ -225,12 +225,96 @@ services.AddScoped<IUserService, UserService>();
 - Stack allocation
     
 
-#### **c) Benchmarking**
+ 📌 ** Benchmarking**
 
 - **BenchmarkDotNet**: Biblioteca para medição de performance
     
 - Análise precisa de desempenho
 
+ 
+➡️Segurança
+
+📌 Autenticação e Autorização**
+
+- **ASP.NET Core Identity**: Sistema de identidade
+    
+- **JWT Tokens**: APIs stateless
+    
+- **OAuth 2.0 / OpenID Connect**
+    
+
+📌 Data Protection**
+
+- Criptografia de dados sensíveis
+    
+- Proteção contra XSS, CSRF
+    
+
+📌Secure Coding**
+
+- Validação de input
+    
+- Parameterized queries (SQL injection prevention)
+    
+
+---
+
+➡️8. DevOps e Deploy**
+
+📌CI/CD Integration**
+
+- GitHub Actions
+    
+- Azure DevOps
+    
+- Jenkins
+    
+
+📌 Containers**
+
+- Docker support nativo
+    
+- Kubernetes orchestration
+    
+
+📌Cloud Deployment**
+
+- Azure App Service
+    
+- AWS Elastic Beanstalk
+    
+- Self-hosted
+    
+
+---
+
+Tendencias e Futuro**
+
+📌.NET 9+**
+
+- Maior performance
+    
+- Novas APIs
+    
+- Melhorias no AOT
+    
+
+📌 Cloud Native**
+
+- Microservices
+    
+- Serverless (Azure Functions)
+    
+- Service mesh
+    
+
+📌AI Integration**
+
+- ML.NET
+    
+- Azure AI integration
+    
+- Semantic Kernel
 
 
 
