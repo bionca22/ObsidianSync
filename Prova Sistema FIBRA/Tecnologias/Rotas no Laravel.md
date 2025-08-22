@@ -48,3 +48,8 @@ Route::get('/dashboard', function () {
 })->middleware('auth');
 ```
 
+----
+
+**"Como você protegeria uma rota de API no Laravel para que apenas usuários autenticados possam acessar?"**
+
+> **Resposta:** Utilizando o middleware `auth:api`. Primeiro, é necessário configurar um driver de autenticação para API, como o Passport ou Sanctum, no arquivo `config/auth.php`. Após a instalação e configuração do pacote escolhido, as rotas da API podem ser agrupadas dentro de um grupo que aplica o middleware `auth:api`, que exige que um token de acesso válido seja enviado no cabeçalho da requisição HTTP (no formato `Authorization: Bearer <token>`).
