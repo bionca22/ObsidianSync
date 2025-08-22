@@ -53,3 +53,38 @@ Route::get('/dashboard', function () {
 **"Como você protegeria uma rota de API no Laravel para que apenas usuários autenticados possam acessar?"**
 
 > **Resposta:** Utilizando o middleware `auth:api`. Primeiro, é necessário configurar um driver de autenticação para API, como o Passport ou Sanctum, no arquivo `config/auth.php`. Após a instalação e configuração do pacote escolhido, as rotas da API podem ser agrupadas dentro de um grupo que aplica o middleware `auth:api`, que exige que um token de acesso válido seja enviado no cabeçalho da requisição HTTP (no formato `Authorization: Bearer <token>`).
+
+
+1.  c) Route::post('/users', ...) V
+2.  a) Define onde o controlador está localizado.  X
+3. b) Permitir a geração de URLs e redirecionamentos de forma dinâmica e semântica. V
+4. b) `routes/api.php` é para rotas de API (stateless), e `routes/web.php` é para rotas web tradicionais (stateful com sessões). V
+5. a) `php artisan route:list` V
+6. a) `use Notifiable;` X
+7. a) `/oauth/authorize` V
+8. a) `middleware('auth')` X
+9. d) Laravel Breeze X
+10. d) Habilita as rotas de autenticação web padrão do Laravel. X
+11. c) Definir múltiplas rotas RESTful para um  controlador, excluindo as rotas `create` e `edit`. X
+12. d) Todas as alternativas acima estão corretas.
+13. b) Aplicar um middleware a todas as rotas dentro do grupo, exigindo autenticação para acessá-las.
+14. d) `Token: <token>`
+15. d) `php artisan passport:generate-keys`
+
+
+Laravel Sanctum é o pacote é mais indicado para uma API simples onde seu próprio frontend consome os dados, sem a complexidade do OAuth2. O Sanctum é mais leve e simples para tokens de API simples.
+
+métodos 
+- `where` : Adiciona uma condição de validação para um parâmetro de rota.
+- `name`: Permitir a geração de URLs e redirecionamentos de forma dinâmica.
+- `apiResource`: 
+
+rotas
+- `routes/api.php` é para rotas de API (stateless), e `routes/web.php` é para rotas web tradicionais.
+- `php artisan route:list` : Lista todas as rotas, seus verbos, URIs, nomes e ações.
+- `/oauth/token` : Esta é a rota padrão para o fluxo "password grant" do OAuth2.
+- `Passport::routes()`
+
+Passport
+- `use HasApiTokens;` : Este trait é fornecido pelo Passport para gerenciar tokens.
+- `middleware('auth:api')`: O guard `api` configurado para usar o Passport é acionado.
