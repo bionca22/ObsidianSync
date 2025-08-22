@@ -15,11 +15,36 @@ As rotas são definidas no arquivo `routes/web.php` (para aplicações web) e�
 |**DELETE**|`Route::delete()`|`Route::delete('/posts/{id}', [PostController::class, 'destroy']);`|Exclui um recurso.|
 |**ANY**|`Route::any()`|`Route::any('/contato', function() { ... });`|Responda a qualquer verbo HTTP.|
 
+### ➡️**Autenticação no Laravel**
 
-#### **. Autenticação Básica (Pacote `laravel/ui` ou `laravel/breeze`)**
+
+####📌 **. Autenticação Básica (Pacote `laravel/ui` ou `laravel/breeze`)**
 
 O Laravel oferece um sistema de autenticação pronto para aplicações web tradicionais (com sessões).
 
 o Breeze é a opção mais moderna e recomendada, oferecendo um scaffolding de autenticação com Tailwind CSS e modelos Blade, sendo ideal para quem busca simplicidade ou um ponto de partida para um novo projeto. O UI, por outro lado, é uma versão mais antiga, que utiliza Bootstrap e tem suporte mais limitado, sendo apropriado apenas para projetos legados ou se precisar especificamente de Bootstrap
 
-**Comando para scaffold (andaime):**
+📌**Comando para scaffold (andaime):**
+
+No Laravel, "scaffolding" refere-se ao processo de geração de uma estrutura básica ou código padrão para um aplicativo, particularmente para funcionalidades comuns como autenticação ou predefinições de front-end.
+
+```PHP
+composer require laravel/ui
+php artisan ui bootstrap --auth
+npm install && npm run dev
+```
+
+- **O que isso cria?**
+    
+    - Rotas: `/login`, `/register`, `/logout`, `/password/reset`, etc.
+        
+    - Views: `auth/login.blade.php`, `auth/register.blade.php`
+        
+    - Controller: `AuthController` (não visível, mas rotas definidas)
+
+```PHP
+Route::get('/dashboard', function () {
+    // Apenas usuários autenticados podem acessar...
+})->middleware('auth');
+```
+
