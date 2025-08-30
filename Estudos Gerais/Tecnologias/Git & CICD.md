@@ -46,6 +46,26 @@
 | // //                    | Para adicionar arquivos que não foram incluídos no último commit                                | `git add <nome-do-arquivo>` e depois `git commit --amend`      |
 | `git rebase -i`          | Isso abrirá um editor (como Vim ou Nano) com uma lista dos seus commits e comandos disponíveis: | `git checkout minha-feature`em seguida<br>´git rebase -i main´ |
 |                          |                                                                                                 |                                                                |
+> [!abstract] Mais sobre o git rebase -i
+>Este comando é mais complexo e poderoso. Ele significa: 
+>- **`rebase`**: "Rebasear" é mover a base de sua branch para a ponta de outra branch. Em outras palavras, ele pega todos os seus commits (que estão em `minha-feature`) e os "reaplica" no topo da branch `main`. O resultado é que sua branch `minha-feature` parecerá que foi criada a partir do ponto mais recente da `main`, mantendo um histórico de commits mais limpo e linear.
+> **`-i`**: A flag `-i` significa "interativo". Isso é o que torna o comando tão útil. Ao usar o `-i`, o Git abre um editor de texto com uma lista dos commits da sua branch. Nesse editor, você pode interagir com os commits, podendo:
+> - **`pick`**: Manter o commit como está.
+> - **`reword`**: Alterar a mensagem do commit.
+> - **`squash`**: Combinar um commit com o commit anterior, unindo-os em um só.
+> - **`fixup`**: Combinar um commit com o anterior, mas descartando a mensagem do commit atual.
+> - **`reorder`**: Mudar a ordem dos commits.
+> - **`drop`**: Excluir um commit.
+> ##### Exemplo de saida:
+> ```bash
+pick a1b2c3d Adiciona funcionalidade X
+pick e4f5g6h Corrige bug na funcionalidade X
+pick i7j8k9l Adiciona testes para X
+
+
+
+
+
 
 
 
