@@ -31,13 +31,45 @@
 
 #### **4. Ramificação (Branching) e Mesclagem (Merging)**
 
-|Comando|Função|Exemplo|
-|---|---|---|
-|**`git branch`**|Lista, cria ou deleta branches.|`git branch feature-x` (cria branch)|
-|**`git checkout`**|Muda para uma branch ou restaura arquivos.|`git checkout feature-x`|
-|**`git switch`**|Alterna entre branches (versão mais moderna).|`git switch main`|
-|**`git merge`**|Mescla uma branch à branch atual.|`git switch main`  <br>`git merge feature-x`|
+| Comando            | Função                                        | Exemplo                                      |
+| ------------------ | --------------------------------------------- | -------------------------------------------- |
+| **`git branch`**   | Lista, cria ou deleta branches.               | `git branch feature-x` (cria branch)         |
+| **`git checkout`** | Muda para uma branch ou restaura arquivos.    | `git checkout feature-x`                     |
+| **`git switch`**   | Alterna entre branches (versão mais moderna). | `git switch main`                            |
+| **`git merge`**    | Mescla uma branch à branch atual.             | `git switch main`  <br>`git merge feature-x` |
 
+## Úteis
+
+| Comando                  | Função                                                                                          | Exemplo                                                        |
+| ------------------------ | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| **`git commit --amend`** | Corrigi o último commit                                                                         | `git commit --amend -m "Nova mensagem"`                        |
+| // //                    | Para adicionar arquivos que não foram incluídos no último commit                                | `git add <nome-do-arquivo>` e depois `git commit --amend`      |
+| `git rebase -i`          | Isso abrirá um editor (como Vim ou Nano) com uma lista dos seus commits e comandos disponíveis: | `git checkout minha-feature`em seguida<br>´git rebase -i main´ |
+|                          |                                                                                                 |                                                                |
+
+
+
+## Boas Praticas
+- **Git Tags**: Marque versões estáveis:
+```bash
+git tag -a v1.0.0 -m "Versão 1.0.0"
+git push origin --tags
+```
+
+### **Fluxos de Trabalho (Workflows) Comuns**
+1. **GitFlow**:
+    
+    - Branches fixas: `main` (produção), `develop` (integração), `feature/`, `release/`, `hotfix/`.
+        
+    - Ideal para projetos com versões planejadas.
+    
+2. **GitHub Flow**:
+    
+    - Simples: `main` sempre deployável, branches de feature com PRs.
+        
+    - Mais ágil para integração contínua.
+
+-----
 
 ### ** Estados de um Arquivo no Git**
 
@@ -203,3 +235,6 @@ Untracked files:
     
 
 Esse ciclo é o coração do funcionamento básico do Git.
+
+
+---
