@@ -29,7 +29,7 @@ git branch -a
 ### Clonar
 
 ```bash
-git clone gitea:usuario/repositorio.git
+git clone gitea:usuario/nome_repositorio.git
 ```
 
 clonar uma branch especifica
