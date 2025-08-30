@@ -40,12 +40,13 @@
 
 ## Úteis
 
-| Comando                  | Função                                                                                          | Exemplo                                                        |
-| ------------------------ | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| **`git commit --amend`** | Corrigi o último commit                                                                         | `git commit --amend -m "Nova mensagem"`                        |
-| // //                    | Para adicionar arquivos que não foram incluídos no último commit                                | `git add <nome-do-arquivo>` e depois `git commit --amend`      |
-| `git rebase -i`          | Isso abrirá um editor (como Vim ou Nano) com uma lista dos seus commits e comandos disponíveis: | `git checkout minha-feature`em seguida<br>´git rebase -i main´ |
-|                          |                                                                                                 |                                                                |
+| Comando                  | Função                                                                                            | Exemplo                                                                                                                                                                                    |
+| ------------------------ | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **`git commit --amend`** | Corrigi o último commit                                                                           | `git commit --amend -m "Nova mensagem"`                                                                                                                                                    |
+| // //                    | Para adicionar arquivos que não foram incluídos no último commit                                  | `git add <nome-do-arquivo>` e depois `git commit --amend`                                                                                                                                  |
+| **`git rebase -i`**      | Isso abrirá um editor (como Vim ou Nano) com uma lista dos seus commits e comandos disponíveis:   | `git checkout minha-feature`em seguida<br>`git rebase -i main`                                                                                                                             |
+| **`git stash`**          | Uma "gaveta" temporária para suas alterações. Permite que você volte a um estado de commit limpo. | `git stash push -m "Minha mensagem descritiva"`                                                                                                                                            |
+| **`git cherry-pick`**    | Aplica alterações de um commite específico de uma branch em outra                                 | 1. Encontre o hash do commit que deseja trazer (usando `git log`).<br>    <br>2. Mude para a branch de destino.<br>    <br>3. Execute:<br>`git checkout main`<br>`git cherry-pick a1b2c3d` |
 > [!abstract] Mais sobre o git rebase -i
 >Este comando é mais complexo e poderoso. Ele significa: 
 >- **`rebase`**: "Rebasear" é mover a base de sua branch para a ponta de outra branch. Em outras palavras, ele pega todos os seus commits (que estão em `minha-feature`) e os "reaplica" no topo da branch `main`. O resultado é que sua branch `minha-feature` parecerá que foi criada a partir do ponto mais recente da `main`, mantendo um histórico de commits mais limpo e linear.
