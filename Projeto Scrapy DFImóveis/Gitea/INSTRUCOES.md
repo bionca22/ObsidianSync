@@ -4,6 +4,7 @@ Na pasta teste tem um exemplo de repositório com um commit e push que foi envia
 Na pasta teste2 tem um exemplo de repositorio criado com o comando ```git tea teste-repo```
 Esse comando cria remotamente um repositório no gitea e clona ele localmente já com o remote adicionado para efetuar push.
 
+#### C
 ### Adicionar remotes
 
 Verificar se existem repositórios vinculados
