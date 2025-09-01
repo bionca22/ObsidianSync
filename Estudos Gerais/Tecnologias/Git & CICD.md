@@ -2,7 +2,7 @@
 
 - **Repositório (Repo)**: Diretório onde o Git rastreia as alterações dos arquivos.
     
-- **Commit**: "Snapshot" (foto instantânea) das alterações, com um histórico versionado.
+- **Commit**: "foto" das alterações, com um histórico versionado.
     
 - **Branch (Ramificação)**: Linha independente de desenvolvimento. A branch padrão é `main` ou `master`.
     
