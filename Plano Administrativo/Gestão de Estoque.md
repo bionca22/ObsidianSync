@@ -113,3 +113,47 @@ Existem alguns **cuidados técnicos** que podem ajudar você a pensar na localiz
 **Deslocamento**: materiais pesados devem ficar próximos à entrada e à saída do estoque para facilitar no deslocamento.
 
 **Perigo**: caso em seu estoque tenha algum tipo de produto químico ou inflamável, é preciso que ele fique em um local específico.
+
+----
+### Giro de Estoque
+
+Giro de estoque acontece quando o estoque é totalmente renovado após o um período, isso significa, todas as peças antigas sendo vendidas e novas compradas.
+
+Para descobrir p total de vendas durante um período basta dividir o total de vendas durante um período pela média de estoque daquele mesmo período.
+
+![[Pasted image 20250906160753.png]]
+
+
+Para obter a média do estoque, você deverá somar o estoque inicial com o estoque final e dividir o resultado por dois:
+
+![[Pasted image 20250906160839.png]]
+
+Agora, acompanhe o cálculo do giro de estoque da loja.
+
+**Relembre os dados**: em fevereiro, o estoque iniciou com 10 blusas. Foram vendidas 14 peças ao longo do mês. E, neste mesmo mês, Camila realizou a compra de mais 10 peças para recompor o estoque. Ao final de fevereiro estavam disponíveis 6 blusas no estoque. Verifique a fórmula:
+
+![[Pasted image 20250906161116.png]]
+
+Assim, o número de vezes em que ocorreu o giro de estoque em fevereiro foi de 1,75.
+
+**Mas o estoque é composto por vários tipos de produtos, então, como calcular o giro de todos eles?**
+
+Utilizando a seguinte fórmula:
+
+![[Pasted image 20250906161135.png]]
+
+Verifique novamente o exemplo da loja de Camila.
+
+O estoque da loja Estilo Verão é composto por vários tipos de produto, como camisetas, regatas, vestidos, _shorts_, biquínis, sungas, bolsas, entre outros. E cada um desses produtos tem um preço diferenciado.
+
+Então, se Camila quisesse calcular o giro de todo o seu estoque, ela deveria realizar um controle preciso das entradas e saídas, pois esses dados são fundamentais para a realização dos cálculos.
+
+Camila fez esses cálculos e o valor encontrado foi um total de R$ 1.667.037,59. Esse é o valor consumido no período escolhido.
+
+![[Pasted image 20250906161535.png]]
+
+Com o valor do estoque médio referente ao período de janeiro a junho calculado, já se tem os valores necessários para calcular o giro de todos os produtos.
+
+![[Pasted image 20250906161657.png]]
+
+No período de janeiro a junho, os produtos do estoque da loja Estilo de Verão giraram 17,34 vezes, ou seja, foram vendidos e repostos no mínimo 17,34 vezes.
