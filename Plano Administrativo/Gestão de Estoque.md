@@ -157,3 +157,16 @@ Com o valor do estoque médio referente ao período de janeiro a junho calculado
 ![[Pasted image 20250906161657.png]]
 
 No período de janeiro a junho, os produtos do estoque da loja Estilo de Verão giraram 17,34 vezes, ou seja, foram vendidos e repostos no mínimo 17,34 vezes.
+
+###  Técnicas de controle de estoque
+
+**Técnica da previsão (dedução)**
+O controle do estoque da sua empresa  é no “olhômetro”, decidindo o quê, quando e quanto comprar. Essa técnica não é muito segura, porque não utiliza registros e controles escritos.
+
+Quando utiliza essa técnica, o empresário precisa ter uma atenção constante por causa dos altos riscos de erros na avaliação do tempo de reposição (TR) e do lote de reposição (LR).
+
+Tempo de reposição (TR) é o intervalo de tempo entre a solicitação do lote de reposição e o recebimento deste no local do estoque ou lote de compra (LC).
+
+Já o lote de reposição (LR) é a quantidade de material que deve ser solicitada numa reposição de estoque, também conhecida como lote de compra (LC).
+
+**Não se arrisque! Realize um controle cuidadoso do seu estoque.**
