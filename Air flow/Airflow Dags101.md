@@ -87,3 +87,5 @@ def my_dag():
 - O `PythonOperator` é um dos operadores mais comuns do Airflow. Ele permite que você execute uma função **Python** específica como uma tarefa.
 - `python_callable` é a função Python que será executada, que neste caso é a função `print_a`.
 - A função `chain()` é uma maneira mais concisa de definir as dependências entre as tarefas. Em vez de usar os operadores de bitwise `>>` (para dependência "downstream") ou `<<` (para dependência "upstream")
+
+-
