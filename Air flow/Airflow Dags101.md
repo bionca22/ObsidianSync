@@ -15,7 +15,7 @@ Por exemplo, a imagem abaixo representa um DAG com três tarefas.
 ![[Pasted image 20250917181810.png]]
 
 ### Definindo um DAG
-
+###### primeira forma 
 ```python
 from airflow.sdk import dag
 from pendulum import datetime
@@ -28,8 +28,29 @@ from pendulum import datetime
 	max_consecutive_failed_dag_runs=3,
 	)
 	
-	defmy_dag():
+	def my_dag():
 		pass
+		
+my_dag()
+```
+###### segunda forma
+```python
+from airflow.sdk import task, DAG
+from pendulum import datetime
+
+with DAG(
+	schedule="@daily",
+	start_date=datetime(2025, 1, 1),
+	description="this dags does...",
+	tags=["team_a", "source_a"],
+	max_consecutive_failed_dag_runs=3,
+	):
+		@task
+		def task_a():
+			print("Hello from task A!")
+		
+		task_a()
+
 ```
 
 `@dag` -> inicia a DAG
