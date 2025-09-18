@@ -1,5 +1,5 @@
 
-**Primeiro**: certifique-se de que você tem as seguintes ferramentas instaladas:
+#### **Primeiro**: certifique-se de que você tem as seguintes ferramentas instaladas:
 
 - **Docker:** É a tecnologia que vamos usar para rodar o Airflow em contêineres. Você pode baixá-lo aqui: [https://www.docker.com/](https://www.docker.com/). ou em qualquer loja de aplicativos.
 
@@ -45,7 +45,7 @@ Esse comando vai criar uma série de arquivos e pastas essenciais para o seu pro
     
 - **`requirements.txt`**: Para instalar bibliotecas Python que suas tarefas precisam, como `requests` para raspagem de dados.
 
-**Terceiro:** Agora que a estrutura está pronta, você pode escrever o seu DAG de raspagem dentro da pasta **`dags/`**.
+#### **Terceiro:** Agora que a estrutura está pronta, você pode escrever o seu DAG de raspagem dentro da pasta **`dags/`**.
 
 #### **Quarto:** Execute o comando para iniciar o ambiente do Airflow:
 
