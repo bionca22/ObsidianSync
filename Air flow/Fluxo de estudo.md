@@ -1,4 +1,12 @@
-
+Topics
+DAG basics
+DAG scheduling
+Airflow Components
+Variables
+Connections
+Xcoms
+Taskflow UI
+DAG Debugging
 # Roteiro Estratégico e Abrangente para as Certificações Apache Airflow 3
 
 ## 1. Introdução: Decifrando o Cenário de Certificações do Airflow 3
