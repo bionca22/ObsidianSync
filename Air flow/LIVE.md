@@ -32,3 +32,27 @@ Now, the Triggerer and the DAG File Processors connect with the database through
 
 When you add a new DAG file, that takes up to five minutes for Airflow to know about this new DAG file. And if you modify an existing DAG, then Airflow will take thirty seconds to know about this modification. 
 ==So new DAG file, five minutes. Existing DAG files, thirty seconds.==
+
+### Defining DAG
+
+==The scheduler uses a heuristic to define if file ias a DAG or not, and that heuristic is based on the if the words DAG os Airflow exists in a file==
+
+![[Pasted image 20250922201843.png]]
+
+if you define dependencies  using the task or DAG decorator, then ==make sure that you explicitly call your tasks, if you don't, you will have a error. A explicitly calling is one with the parenthesis== .
+
+==If you try to have two list of task side by side, and then you use the right pitch shift operator, that won't work. You cannot have two list of tasks side by side==
+
+![[Pasted image 20250922201752.png]]
+
+linear chain, cross chain
+
+### DAG Scheduling
+
+state = Final DAG Run's state
+dag id = DAG ID of the DAG triggered
+logical date = The date when the DAG runs
+start date = Start timestamp
+end date = End timestamp
+duration = Time to complete the DAG Run
+run id = String that uniquely defines the DAG run
