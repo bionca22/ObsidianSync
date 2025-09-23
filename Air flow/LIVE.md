@@ -56,3 +56,8 @@ start date = Start timestamp
 end date = End timestamp
 duration = Time to complete the DAG Run
 run id = String that uniquely defines the DAG run
+
+![[Pasted image 20250923181310.png]]
+
+the tasks will run sharing the same logical date
+![[Pasted image 20250923182034.png]]default behavior of scheduling
