@@ -59,5 +59,9 @@ run id = String that uniquely defines the DAG run
 
 ![[Pasted image 20250923181310.png]]
 
+![[Pasted image 20250923202257.png]]
 the tasks will run sharing the same logical date
-![[Pasted image 20250923182034.png]]default behavior of scheduling
+default behavior of scheduling: if the first DAG have a start date at January 1 at 10am, he will runs at that date e time right away, then after ten minutes, as defined in your scheduled interval, the second DAG runs, and it goes like that. ==The date at which your DAG runs is specified in the logical date.==
+
+![[Pasted image 20250923182034.png]]
+here it's possible put back the old default behavior whit the create_cron_data_intervals = TRUE
