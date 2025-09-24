@@ -94,5 +94,14 @@ Variables work like every other variable.
 
 ==There are multiples ways to create variables in Airflow.==
 ![[Pasted image 20250924164910.png]]
+#### Best Practices for Using Environment Variables
 
-To create that airflow variable using environment variables, let's say you create a AIRFLOW_VAR_MYREGULARVAR, and that will be key of your variable 
+- **Prefix with `AIRFLOW__`:** To be recognized by Airflow, your environment variables must follow the `AIRFLOW__<SECTION>__<KEY>` format. The `__` acts as a separator.
+    
+    - **Example:** `AIRFLOW__CORE__DAGS_FOLDER` sets the `dags_folder` option in the `[core]` section.
+
+The correct way to create an Airflow variable using an environment variable is to prefix the environment variable with **`AIRFLOW_VAR_`**. Airflow's scheduler automatically reads any environment variable that starts with this prefix and converts it into a key-value pair in its database.
+
+- The actual key of the Airflow variable would be **`MYREGULARVAR`** (the part after the `AIRFLOW_VAR_` prefix).
+    
+- The **value** of the environment variable (e.g., `export AIRFLOW_VAR_MYREGULARVAR="my_value"`) becomes the value of your Airflow variable.
