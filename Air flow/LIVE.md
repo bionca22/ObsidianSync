@@ -65,3 +65,34 @@ default behavior of scheduling: if the first DAG have a start date at January 1 
 
 ![[Pasted image 20250923182034.png]]
 here it's possible put back the old default behavior whit the create_cron_data_intervals = TRUE
+
+XCOMs
+
+An XCom, short for "cross-communication," is a mechanism in Apache Airflow that allows tasks to **exchange small bits of data**. It's a way for a task to push a value and for a downstream task to pull that value later
+
+![[Pasted image 20250924155525.png]]
+
+A XCOM is identified by a key, but not only. There are meny properties that help you to identify your XCOM. For example, the DAG ID, the task ID, and so on.
+
+==If you want to create a XCOM, then you can use the firt notation which is by calling XCOM push explicitly.==
+
+==So here we create a XCOM with the key mynumber and the value twenty three. That value will be stored in the airflow meta database. and then another way to push a XCOM is by either using the parameter XCOM push or returning a value ,as show below, and that value will be pushed automatically into the airflow database with the key return value==
+
+![[Pasted image 20250924161202.png]]
+![[Pasted image 20250924162122.png]]
+
+there was some ways to use XCOM.
+
+**Size Limits**: XComs are designed for small messages. Storing large objects like entire DataFrames or large JSON files is highly discouraged. It can clog the metadata database and lead to significant performance issues. For larger data, it's better to store the data in an external location (like a data lake or database) and pass the **location** of the data using XComs.
+
+depending on the meta database you use, you won't be able ti share up to one gigabyte of data.
+![[Pasted image 20250924162349.png]]
+
+Variables work like every other variable.
+
+==The variables is identify by a unique key,== That's how you can fatch it in your DAX. The variable should be JSON serializable as well.
+
+==There are multiples ways to create variables in Airflow.==
+![[Pasted image 20250924164910.png]]
+
+To create that airflow variable using environment variables, let's say you create a AIRFLOW_VAR_MYREGULARVAR, and that will be key of your variable 
