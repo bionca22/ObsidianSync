@@ -105,3 +105,20 @@ The correct way to create an Airflow variable using an environment variable is t
 - The actual key of the Airflow variable would be **`MYREGULARVAR`** (the part after the `AIRFLOW_VAR_` prefix).
     
 - The **value** of the environment variable (e.g., `export AIRFLOW_VAR_MYREGULARVAR="my_value"`) becomes the value of your Airflow variable.
+
+![[Pasted image 20250924182522.png]]
+### Connections
+
+Connection will have the snowflake type with all the parameters that your connection needs to connect to snowflake.
+
+==If you don't see the connection type that  you need when you create a connection, that means you have to install the corresponding Airflow provider.==
+
+![[Pasted image 20250924183430.png]]
+
+==every time you want to use the environment variables to create connections in airflow you will need use AIRFLOW_CONN_idname of your connection, then the string corresponding to your connection with the login, the password, and so on.== (pelo menos duas questões sobre isso)
+
+If you want to truly secure your connections, you should use a secret backend. And the you have the airflow CLI if you want to creat connections
+
+### Sensors
+
+![[Pasted image 20250924184542.png]]
