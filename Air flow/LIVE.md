@@ -122,3 +122,19 @@ If you want to truly secure your connections, you should use a secret backend. A
 ### Sensors
 
 ![[Pasted image 20250924184542.png]]
+
+==a Sensor waits for a event and you have many sensors==
+
+poke interval e poke mode, the poke mode is the default mode. Your sensor will check every five minutes, for exemple. In the default mode your sensor takes a worker slot, end any time a worker is taken it's occupied until the task finishes. By default you have a twenty eight worker slots.
+
+YOu can use another mode which is the reschedule mode, and the reschedule mode will free your worker slot while the sensor is waiting. So you can execute all the tasks while the sensor is waiting.
+
+Just keep in mind that if you expect that what you are waiting for will take longer than five minutes, for example you should definitely use the reschedule mode. And if you expect that it is that it will be shorter than five minutes, then you should use poke mode. Becouse you definitely don't want to have enough worker slots to execute other tasks. And that's basically, this is little bit more advanced, but this is where deferrable operators are useful. 
+
+==For the certification, remember, lower shorter than five minutes, depoke mode. Longer than five minutes, reschedule.== 
+
+==Keep in mind the start date, and this is important, you will have a question about that, the start date is not required anymore. You don't have to specify the start date in your DAGs. Why? Well, because now the start date has a default value and that default value is null.==
+
+==You will have some questions about diagrams, so it is important for you to remember that then if you want to initialize the Airflow meta database manually, you will have to run the command airflow db migrate== 
+
+And that means Airflow was scheduling all the non paired diagrams between the start date or the last time your DAG was triggered an the current date. Now by default the catch up is set to false 
