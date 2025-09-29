@@ -150,6 +150,40 @@ And that means Airflow was scheduling all the non paired diagrams between the st
 		B. to both trigger worflows and submit tasks to the executor to run 
 		C. To define how tasks are executed on which system 
 		D. To notify when task run, retry, or fail.
-	(resposta correta "B").  = the scheduler trigger
+	(resposta correta "B").  (''C'' is the definition of **executor**, he define how tasks are executed and on which system, and then the workers execute the tasks. So ''A'' is the definition of the workers)
 
-2. 
+2. A DAGs runs daily with a start_date 2025/01/01 00:00. When will the 3rd Dag run be triggered?
+		A. 2025/01/01 00:00
+		B. 2025/01/02 00:00
+		C. 2025/01/03 00:00
+		D. 2025/01/04 00:00
+		(resposta correta "B"). (no antigo Airfloe seria "D") 
+
+![[Pasted image 20250929172041.png]]
+(resposta correta C). ( two list of tasks side by side that does not work you have to use chain in that case.)
+
+3. You made a mistake and two DAGs have the same DAG id. What do you expect to se?
+		A. An error on the Airflow UI
+		B. The DAG having the earling start_date
+		C. The two DAGs side by side
+		D. One DAG randomly picked by Airflow
+(resposta correta "D"). (Airflow can maybe trigger an erro, so cabe recurso in this mother flocker).
+
+4. Can you have two Xcoms with the same id (name)?
+	A. yes, a XCOM is defined by its id, task_id and dag_id
+	B. yes, a XCOM is defined by its id and dag_id
+	C. yes, but Airflow will randomly return one or the other in your DAGs 
+	D. No, Airflow thows an error on the user interface.
+(resposta correta "A"). (A XCOM has more than just an ID to be identified with. It has more propertis, even the date at which that XCOM was created, and so on).
+
+
+
+![[Pasted image 20250929173852.png]]
+
+![[Pasted image 20250929180432.png]]
+
+Implementation code 
+![[Pasted image 20250929180626.png]]
+![[Pasted image 20250929180911.png]]
+
+==Be familiar with the task flow API, with the task decorator and the tag decorator, becouse most of the code that you will see in the exam will be based on the taskflow API.==
