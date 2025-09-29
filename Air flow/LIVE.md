@@ -125,6 +125,10 @@ If you want to truly secure your connections, you should use a secret backend. A
 
 ==a Sensor waits for a event and you have many sensors==
 
+A Sensor is typically a typr os operator that checks is a condition is met at specific interval. So for example you havethe file sensor to wait for a file at specific interval of time. As soon the condition is met, will succeed and  then will move to the next downstream tasks.
+
+![[Pasted image 20250929165217.png]]
+
 poke interval e poke mode, the poke mode is the default mode. Your sensor will check every five minutes, for exemple. In the default mode your sensor takes a worker slot, end any time a worker is taken it's occupied until the task finishes. By default you have a twenty eight worker slots.
 
 YOu can use another mode which is the reschedule mode, and the reschedule mode will free your worker slot while the sensor is waiting. So you can execute all the tasks while the sensor is waiting.
@@ -133,8 +137,19 @@ Just keep in mind that if you expect that what you are waiting for will take lon
 
 ==For the certification, remember, lower shorter than five minutes, depoke mode. Longer than five minutes, reschedule.== 
 
-==Keep in mind the start date, and this is important, you will have a question about that, the start date is not required anymore. You don't have to specify the start date in your DAGs. Why? Well, because now the start date has a default value and that default value is null.==
+==The start date is not required anymore. You don't have to specify the start date in your DAGs. Now the start date has a default value and that default value is null.==
 
-==You will have some questions about diagrams, so it is important for you to remember that then if you want to initialize the Airflow meta database manually, you will have to run the command airflow db migrate== 
+==You will have some questions about diagrams. If you want to initialize the Airflow meta database manually, you will have to run the command airflow db migrate== 
 
-And that means Airflow was scheduling all the non paired diagrams between the start date or the last time your DAG was triggered an the current date. Now by default the catch up is set to false 
+And that means Airflow was scheduling all the non paired diagrams between the start date or the last time your DAG was triggered an the current date. Now by default the catch up is set to false.
+
+==The DAG folder is not an architectural component.==
+
+1. Which of the following best describes the role of the Airflow scheduler?
+		A. To execute tasks
+		B. to both trigger worflows and submit tasks to the executor to run 
+		C. To define how tasks are executed on which system 
+		D. To notify when task run, retry, or fail.
+	(resposta correta "B").  = the scheduler trigger
+
+2. 
