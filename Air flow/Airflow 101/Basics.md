@@ -69,6 +69,11 @@ Which Airflow component is in charge of executing the logic of a DAG's tasks?
 
 **Executor:** Pushes your task instance objects into the queue, that defines how and on which system to execute tasks.
 
+
+> [!danger] The Gemini tells the:
+> **Mostly Correct, but often reversed in action.** The Executor is the **interface** that talks to the workers. While the Scheduler determines _what_ needs to be run and signals the Executor, the Executor's typical action (especially in the most common setups like Celery or Kubernetes) is to **pull** from the queue or **listen** for tasks to be assigned, rather than explicitly "pushing" into it.
+
+
 **Queue:** To execute your tasks in the right order. 
 
 **Workers:** Than the workers pick up the task instances form the queue, and run the python code corresponding to the tasks.
@@ -81,3 +86,40 @@ Which Airflow component is in charge of executing the logic of a DAG's tasks?
 - API server
 
 Differently from the Airflow2 the wokers no longer communicate whit the metadata database. 
+
+Keep in mind that it is possible to have your workers in one cluster and the rest of your Airflow componentes in a completely different network and cluster. 
+
+## Quiz
+Question 1: 
+After creating your DAG in a Python file, which action do you need to take in order for Airflow to start the process of detecting and running your DAG?
+
+ ==Put the Python file in the dags directory==
+
+ Restart Airflow and make sure the DAG is visible on the UI
+
+ Wait for the DAG File Processor to pick up the tasks defined in the DAG
+
+ Launch the API server
+
+___
+
+Question 2:
+Do the workers have direct access to the Airflow metadata database?
+
+ Yes
+
+ ==No==
+
+____
+
+Question 3:
+By default, how long can it take for the Airflow DAG File Processor to detect a new DAG file in the `dags` directory?
+
+ ==5 minutes==
+
+ 1 minute
+
+ 5 seconds
+
+ 30 seconds
+
