@@ -18,3 +18,50 @@ Airflow can process data but it is not mainly designed for that. It is designed 
 
 ![[Pasted image 20250929185939.png]]
 
+## Airflow key terms
+
+DAG = means A Single Data Pipeline = is for Directed Acyclic Graph
+
+A **DAG** has an order - it can only be executed in a sequence that is **directed**, goes from beginning to end. This brings us to the term **acyclic**: a DAG has no cycles, so you always know where it starts and where it finishes. Also it's possible see as a **graph**, whit can be simple or complex, depending on your need.
+
+Like this one:
+![[Pasted image 20250930131153.png]]
+
+Or this one:
+![[Pasted image 20250930131233.png]]
+
+Or much more comples like the following one:
+![[Pasted image 20250930131407.png]]
+
+## Task 
+
+Task is a single unit of work in DAG, you can tink of it like a single node in the graph.
+
+![[Pasted image 20250930134157.png]]
+## Operator
+
+Is the third key term you need to remember. An operator defines the work that the task does.
+
+For exemple, task1 can be a **Python Operator** that is a callable object like a function that triggers a "checking data":
+![[Pasted image 20250930132213.png]]
+
+And the Task2 can be a **Bash Operator** to print "Hello, Airflow" on your on a standard output:
+![[Pasted image 20250930132519.png]]
+
+Than maybe Task3 could be a **HTTP Operator** that makes a specific http request for a url:
+![[Pasted image 20250930132759.png]]
+
+Finally Task4 could be  a **Postgres Operator** that execute a SQL request to the database:
+![[Pasted image 20250930133112.png]]
+
+
+Airflow has hundreds of different operators that you can use to execute different tasks. 
+
+
+#### The operators can be divided in three mains categories
+![[Pasted image 20250930133335.png]]
+**Action Operators**: Is a operator that execute something like a postgres operator to execute a SQL request or the python operator to execute a python fuction.
+
+**Transfer Operators**: transfer the data between a source to a destination. 
+
+**Sensor Operators:** that allow you to wait for an event before executing the next task -- For example, you want to wait for a file or for a record in a database.
