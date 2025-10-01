@@ -21,6 +21,5 @@ python package index (pip)
 Docker/ Doker Compose
 Released Sources
 Helm Chart
-
-
-
+ 
+astro version 
