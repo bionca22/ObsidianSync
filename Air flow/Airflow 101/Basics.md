@@ -123,3 +123,130 @@ By default, how long can it take for the Airflow DAG File Processor to detect a 
 
  30 seconds
 
+## DAG Setup
+
+![[Pasted image 20251001151345.png]]
+
+always when you use a DAG decorator you will need define a function corresponding to your DAG, in this case My_dag(). 
+
+My DAG will be the unique identifier of your DAG. Than within that function corresponding to your DAG you will define the task, and here, two tasks: 
+
+**Task a** is using the python operator to run code.
+**Task b** is using the bash operator to run bash commands.
+
+# Questions
+
+Examine the following code:  
+  
+`from airflow.sdk import dag   from airflow.providers.standard.operators.python import PythonOperator`
+
+In your own words, what does this code do?
+
+==Your response:import the DAG and the python operator==
+
+___
+
+Question 2:
+In which part of a DAG file would you specify how often you want to trigger the DAG?
+
+ In the import statements
+
+ ==In the DAG object definition==
+
+ In the DAG's dependencies
+
+ In the DAG's tasks
+ ___
+
+#### Task dependencys 
+
+![[Pasted image 20251001152058.png]]
+
+between **task a** and **task b** you see a shift operator, in that way it means that **task a** runs first and then **task b**, witch means that task a is a **upstream** and task b is **downstream**.
+
+But you can also use the left bit shift operator, and in this case the first task becomes downstream and de second one becomes the upstream, just the oposite 
+
+![[Pasted image 20251001152349.png]]
+
+## Review
+
+**Airflow Architecture**
+
+- Airflow has seven main components:
+
+- The API server for serving the Airflow UI and providing endpoints for Workers to communicate with the Airflow DB.
+- The metadata database is used to store all metadata (e.g., users, tasks) related to your Airflow instance.
+- The scheduler for monitoring and scheduling your pipelines.
+- The executor defines how and on which system tasks are executed.
+- The DAG File Processor that retrieves and parses DAG files.
+- The queue for holding tasks that are ready to be executed.
+- The worker(s) for executing instructions defined in a task.  
+      
+    
+
+- Airflow runs DAGs in six different steps:
+
+- The DAG File Processor constantly scans the DAGs directory for new files. The default time is every 5 minutes.
+- After the DAG File Processor detects a new DAG, the DAG is processed and serialized into the metadata database.
+- The scheduler checks for DAGs that are ready to run in the metadata database. The default time is every 5 seconds.
+- Once a DAG is ready to run, its tasks are put into the executor's queue.
+- Once a worker is available, it will retrieve a task to execute from the queue.
+- The worker will then execute the task.
+
+**DAG Components**
+
+- A DAG has four core parts:
+
+- The import statements, where the specific operators or classes that are needed for the DAG are defined.
+- The DAG definition, where the DAG object is called and where specific properties, such as its name or how often you want to run it, are defined.
+- The DAG body, where tasks are defined with the specific operators they will run.
+- The dependencies, where the order of execution of tasks is defined using the right bitshift operator (>>) and the left bitshift operator (<<).  
+      
+    
+
+- A DAG’s task can be either upstream or downstream to another task.
+
+
+## Questions
+Which of the following Airflow components does the metadata database communicate with? 
+
+ The queue
+
+ ==The API server==
+
+ ==The scheduler==
+
+ The worker(s)
+
+___
+
+Question 2:
+Examine the image below of a DAG file:   
+  
+![](https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2Fbelfihqbftwug198kgznm1s9j%2Fpublic%2F1711751183%2FGroup+1037.1711751183238.png)  
+  
+Which of the following represents the correct association of each letter to its respective file component description? 
+
+ A. Import Statements B. Tasks (Operators) C. Dependencies D. DAG Object
+
+ A. Import Statements B. Tasks (Operators) C. DAG Object D. Dependencies
+
+ ==A. Import Statements B. DAG Object C. Tasks (Operators) D. Dependencies==
+
+ A. Import Statements B. DAG Object C. Dependencies D. Tasks (Operators)
+
+___
+
+Question 3: 
+Assume a DAG has 3 tasks: `**task_extract**`, `**task_transform**`, and `**task_load**`.  
+  
+Which of the following represents the dependencies in a DAG that needs to meet the following conditions:
+
+- `task_transform` is downstream of `task_extract`.
+- `task_load` is downstream of `task_transform`.
+
+ task_extract << task_load << task_transform
+
+ ==task_extract >> task_transform >> task_load==
+
+ task_extract >> task_load >> task_transform
