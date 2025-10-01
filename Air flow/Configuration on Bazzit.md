@@ -40,12 +40,12 @@ systemctl status --user podman.socket
 
 a common path looks like:
 ```bash
-Listen: /run/user/1000/podman/podman.sock
+Listen: run/user/1000/podman/podman.sock
 ```
 than
 
 ```bash
-export DOCKER_HOST=unix:<socket path>
+export DOCKER_HOST=unix:///<socket path>
 ```
 
 Start the astro airflow from the projeto_teste_airflow
