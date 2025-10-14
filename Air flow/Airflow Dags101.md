@@ -4,7 +4,7 @@ O Directed Acyclic Graph (DAG) é um pipeline de dados definido em código Pytho
 
 Directed: Se multiplas tarefas existem, cada uma delas deve ter ao menos um upstream ou downstream.
 
-Acyclic: Tarefas não podem depender de sí mesmas, isso evita lopes infinitos.
+Acyclic: Tarefas não podem depender de sí mesmas, isso evita loopes infinitos.
 
 Graph: Deve ser possível visualizar em uma estrutura gráfica todas as tarefas, com relações entre tarefas definidas por nós e vértices.
 
@@ -88,4 +88,82 @@ def my_dag():
 - `python_callable` é a função Python que será executada, que neste caso é a função `print_a`.
 - A função `chain()` é uma maneira mais concisa de definir as dependências entre as tarefas. Em vez de usar os operadores de bitwise `>>` (para dependência "downstream") ou `<<` (para dependência "upstream")
 
--
+- Create a file using the **BashOperator**
+- Read the file using the **PythonOperator**
+# Questões
+
+Question 1:  
+What's the role of the start date?
+
+ ==Define when the DAG starts being scheduled==
+
+ Define the trigger interval
+
+ Avoid running past non-triggered DAG Runs
+____
+
+Question 2: 
+What happens if you don't define a start date?
+
+ ==Nothing, it's optional==
+
+ That raises an error
+
+Question 3:
+What's the role of tags?
+
+ ==The allow to better organizing DAGs==
+
+ ==They allow filtering DAGs==
+
+ They prevent from running DAGs that do not belong to the current user
+____
+
+Question 4: 
+How can you avoid assigning the dag object to every task you create?
+
+ ==with DAG(...)==
+
+ dag = ...
+
+ ==@dag(..)==
+
+ You can't. You must assign the dag object to every task
+____
+
+Question 5:
+What happens when two DAGs share the same DAG id?
+
+ The two DAGs appear on the UI
+
+ You get an error
+
+ ==One DAG randomly shows up on the UI==
+____
+
+Question 6:  
+Does `task_a >> task_b >> task_c`
+
+is equivalent to
+
+`task_c << task_b << task_a`?
+
+ ==Yes==
+
+ No
+
+----
+## Wrap Up
+
+Well done!  
+Here are the key takeaways from this module:
+
+1. A DAG must have a unique identifier
+2. The start date is optional and set to None by default
+3. The schedule interval is optional and defines the trigger frequency of the DAG
+4. Defining a description, and tags to filter is strongly recommended.
+5. To create a task, look at the https://registry.astronomer.io/ first.
+6. A task must have a unique identifier within a DAG
+7. You can specify default parameters to all tasks with default_args that expects a dictionary
+8. Define dependencies with bitshift operators (>> and <<) as well as lists.
+9. chain helps to define dependencies between task lists
