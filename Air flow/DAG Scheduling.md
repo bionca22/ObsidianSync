@@ -72,3 +72,85 @@ from pendulum import datatime
 @dag(start_date = datetime(2025, 1, 1), schedule = duration(days=3))
 def my_dag():
 ```
+
+
+## Catchup
+If you set **`catchup=True`**:
+
+**Behavior:** The Airflow Scheduler will look at the DAG's `start_date` and the current time. For every scheduled interval (`@daily`, `@hourly`) that has been missed since the `start_date`, the Scheduler will immediately create and queue an individual **DAG Run** to "catch up" on the lost history.
+
+`**catchup=False**` (Disable Catchup)
+
+If you set **`catchup=False`** (which is the recommended default in Airflow 3.x):
+
+ **Behavior:** The Airflow Scheduler **ignores** all past schedule intervals between the `start_date` and the current date. It will only schedule the DAG Run for the **latest**
+
+## Backfill
+
+Backfill gives you granular, manual control over the exact date range you want to reprocess, which is safer and more predictable than an automatic catchup. And that time can be **before the `start_date`** of the DAG
+
+is useful through line command or user interface:
+
+```bash 
+airflow dags backfill --start-date START_DATE --end-date END_DATE dag_id
+```
+ and then you specify the dates.
+
+User interface:![[Pasted image 20251014104451.png]]
+
+You can also uder the API to backfill your DAG:![[Pasted image 20251014104601.png]]
+
+it's useful  whenever you made a mistake and you want to rerun some past triggered diagrams for your tag.
+
+# Questions 
+
+Question 1:  
+If a DAG runs every day at midnight with a start_date=datetime(2025, 1, 1).  
+When the 3rd DAG run will be triggered?
+
+ 2025-01-01 00:00
+
+ 2025-01-02 00:00
+
+ ==2025-01-03 00:00==
+
+ 2025-01-04 00:00
+___
+
+Question 2:  
+If a DAG with a "@daily" schedule, is triggered at 00:00 on 2025-02-02. What's the logical date value for this DAG Run?
+
+ 2025-02-01 00:00
+
+ ==2025-02-02 00:00==
+
+ 2025-02-03 00:00
+____
+
+Question 3: 
+If a DAG with a "@daily" schedule is triggered at 00:00 on 2025-02-02. What's the data_interval_end value for this DAG Run (Assuming data intervals are used)?
+
+ 2025-02-01
+
+ ==2025-02-02==
+
+ 2025-02-03
+
+ 2025-02-04
+___
+
+Question 4: 
+With catchup=False, what happens when you run your DAG for the first time, and it has a start_date defined as 30 days ago?
+
+ Nothing
+
+ ==The latest non-triggered DAG Run is triggered==
+
+ All non-triggered DAG Runs get triggered
+___
+
+Question 5:  
+logical_date = data_interval_start = data_interval_end by default?
+
+ ==Yes==
+ No
