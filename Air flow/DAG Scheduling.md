@@ -27,4 +27,48 @@ As soon as all the tasks complete, then the state of the diagram is ->success. B
 
 ==And you have four important properties: the run ID-> unique identifier of you diagram, the logical date, data interval start and data interval end -> that are all the same by default==.
 
+### How DAGs are scheduled 
 
+**start_date=** DAG's first interval
+**schedule=** How often the DAG runs
+
+most of the time you will set this parameters.
+
+Default Behavior **(CRATE_CRON_DATA_INTERVALS=False)** 
+![[Pasted image 20251014093010.png]]
+
+but if the Default Behavior is **(CRATE_CRON_DATA_INTERVALS=True)** 
+![[Pasted image 20251014093245.png]]
+the tasks basically gona wait for the data interval to start, and gona have different time stamps from the  de Default Behavior set as "False".
+
+____
+
+The timestamp from which the Scheduler will attempt to backfill. 
+
+**Automatic Default Time:** If you set the start_date using just the date (start_date=datetime(2025, 10, 14)), Airflow automatically assigns the time as midnight (00:00:00).
+
+```python
+from airflow.sdk import dag
+from pendulum import datatime
+
+@dag(start_date = datetime(2025, 1, 1), schedule = "@daily")
+def my_dag():
+```
+
+**start_date**
+ If you set your start_date as "none", then the DAG will runs only automatically, only if you trigger it from the UI, on the comand line interface.
+
+**scheduler**
+When you say that your DAG must be triggered on a specific interval of time, then you use a cron expression.
+
+![[Pasted image 20251014095642.png]]
+
+Because of the constitution of the month(which have different days duration), when you want set your scheduler for every 3 consecutive days you cant use a cron expression. In that case, the schedule of your DAG is relative to the previous diagram, and you can use **"duration"** whit a time delta object in order to define that your DAG should run every three days. Like this:
+
+```python
+from airflow.sdk import dag
+from pendulum import datatime
+
+@dag(start_date = datetime(2025, 1, 1), schedule = duration(days=3))
+def my_dag():
+```
