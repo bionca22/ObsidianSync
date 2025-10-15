@@ -296,3 +296,70 @@ def sensor_decorator():
 
 sensor_decorator()
 ```
+
+
+## Best practices with Sensors
+
+When using sensors, keep the following in mind to avoid potential performance issues:
+
+- Always define a meaningful `timeout` parameter for your sensor. The default for this parameter is seven days, which is a long time for your sensor to be running. When you implement a sensor, consider your use case and how long you expect the sensor to wait and then define the sensor's timeout accurately.
+- Whenever possible and especially for long-running sensors, use the `reschedule` mode so your sensor is not constantly occupying a worker slot. This helps avoid deadlocks in Airflow where sensors take all of the available worker slots.
+- If your `poke_interval` is very short (less than about 5 minutes), use the `poke` mode. Using `reschedule` mode in this case can overload your scheduler.
+- Define a meaningful `poke_interval` based on your use case. There is no need for a task to check a condition every 60 seconds (the default) if you know the total amount of wait time will be 30 minutes.
+
+## Questions
+
+
+Question 1: 
+A Sensor can be used for (**Choose all that apply**):
+
+ ==waiting for files to appear in an S3 bucket==
+
+ ==waiting for a task in another DAG to complete==
+
+ ==waiting for data be present in a SQL table==
+
+ ==waiting for a specified data and time==
+____
+
+Question 2:  
+You have a sensor that waits for a file to arrive in an S3 bucket. Your DAG runs every 10 mins, and it takes 8 mins to complete.
+
+What is the **most** appropriate timeout duration for the sensor? (in seconds)
+
+ 60 * 60 * 24 * 7
+
+ 60 * 60
+
+ ==60 * 5==
+
+Question 3:  
+What mode doesn't take a worker slot while a Sensor waits?
+
+ poke
+
+ ==reschedule==
+
+ none
+____
+
+Question 4:  What Sensor(s) can be used to apply logic conditions? (**Choose all that apply**)
+
+ ==PythonSensor==
+
+ == @task.sensor==
+
+ S3KeySensor
+___
+
+Question 5: 
+Go on the Airflow doc [here](https://airflow.apache.org/docs/apache-airflow/stable/_modules/airflow/sensors/base.html#BaseSensorOperator) and tell me:
+![[Pasted image 20251014152924.png]]
+
+What parameter can be useful to check for data to be present in a database without putting too much workload on each poke?
+
+ timeout
+
+ ==exponential_backoff==
+
+ mode
