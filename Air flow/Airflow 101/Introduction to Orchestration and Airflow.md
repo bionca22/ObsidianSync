@@ -1,10 +1,48 @@
 
 ### Streaming
+
+**Streaming processing** involves analyzing data continuously and incrementally, immediately as it is generated or received. Data is treated as a constant, endless flow.
+
 Airflow is designed for **batch processing**, not for **streaming processing**. As it lacks the capability for continuous real-time data processing and immediate response to data events, whit are essential in streaming contexts.
 
-There is a way to schedule your data pipeline continuously in Airflow. As soon as run completes the next one starts, but ir far from streaming. Streaming has deep infrastructure and data modeling implications that are not taken into account with Airflow. To sum, Airflow is not a streaming solution, however, you can still use Airflow with Kafka, which is a tool to ingest and process data in real-time and then you store the event data in the storage location where Airflow can start workflows based on those data. 
+There is a way to schedule your data pipeline continuously in Airflow. As soon as run completes the next one starts, but ir far from streaming. 
+Streaming has deep infrastructure and data modeling implications that are not taken into account with Airflow. To sum, Airflow is not a streaming solution, however, you can still use Airflow with Kafka, which is a tool to ingest and process data in real-time and then you store the event data in the storage location where Airflow can start workflows based on those data. 
 
 ### Scalability 
+
+**Batch processing** involves collecting data over a period of time and processing the entire volume of data as a single group, or "batch," during a scheduled window.
+
+## Questions
+
+Question 1:
+Which of the following would most likely be the root cause of errors when using Airflow for data processing? (select all that apply)
+
+ A dedicated streaming solution (e.g., Apache Kafka) integrated with Airflow
+
+ Number of data pipelines created
+
+ ==Infrastructure==
+
+ ==Resource allocation==
+_____
+
+Question 2: 
+Fill in the blank:   
+  
+Airflow was designed to be used for _______ and not streaming.
+
+ ==batch processing==
+
+Question 3:  
+Which of the following statements are true about Airflow? (select all that apply)
+
+ Airflow was designed to be used as a dedicated streaming system
+
+ ==Airflow is a scalable solution for data orchestration==
+
+ ==Airflow can preform data processing==
+ ___
+  
 Second use case is when you need more scalability or you need use more and more tasks, how do you make Airflow scalable? By default, Airflow is scalable, you can truly execute as many tasks as you want as long you have the correct underlying infrastructure. However, for small teams with limited resources managing and maintaining a complex infrastructure can be challenging and resource-intensive, in that case you might experience some issues to scale Airflow properly, whit one with their pros and cons.
 In fact, you can see here some pretty well-known companies that run at scale, and you can see how many tasks they are ablr to run per month:
 

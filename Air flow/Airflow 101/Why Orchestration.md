@@ -123,7 +123,7 @@ Which of the following are characteristics of Airflow? (select all that apply)
 
 ## Who Uses?
 
-**Data Scientist:** Needs to process and analyze new data serts as they arrive, and generate insigths and visualizations automatically.
+**Data Scientist:** Needs to process and analyze new data sets as they arrive, and generate insigths and visualizations automatically.
 
 **Data Engeneer:** Need to resolve the error on yesterday's pipeline run and backfill the data.  
 
@@ -149,4 +149,10 @@ In that case, you have a pipeline that runs daily in airflow that ingests the tr
 A slackbot that enables staff at Astronomer to check academy data on customer accounts.
 
 ![[Pasted image 20251015115814.png]]
-So typically we have a customer success manager that sends a message on a specific slack channel with a customer domain and that triggers a pipeline in Airflow that finds the customer, counts the number of students as well as the number of certified students and finally generates reports back to the slack channel
+So typically we have a customer success manager that sends a message on a specific slack channel with a customer domain and that triggers a pipeline in Airflow that finds the customer, counts the number of students as well as the number of certified students and finally generates reports back to the slack channel. That's how they are able to communicate metrics on customers dor the academy automatically.
+
+
+**MLOps & AI:** involves the deployment and management of machine learning models within operational workflows.
+Ask Astro: A open-source Q&A LLM application used to answer questions about Apache  Airflow & Astronomer.
+
+
