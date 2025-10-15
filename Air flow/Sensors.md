@@ -363,3 +363,15 @@ What parameter can be useful to check for data to be present in a database witho
  ==exponential_backoff==
 
  mode
+_____
+## Wrap up
+
+Key takeaways:
+
+- Sensors wait for an event/condition to be met to complete
+- By default, a Sensor times out after 7 days. You should define a better value with the `timeout` parameter
+- A sensor checks an event/condition at every `poke_interval` (60 seconds by default)
+- While a sensor waits, it continuously takes a work slot
+- If you have many sensors or expect them to take time before complete, use the `reschedule` mode
+- With the reschedule mode, while a sensor is waiting, its status will be `up_for_reschedule`
+- You can create a sensor with `@task.sensor`
