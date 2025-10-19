@@ -2,8 +2,8 @@
  ```bash
  docker ps
  ```
+ 
  To find the scheduler ID
-
 ```bash
 docker exec -it <the container id> sh
 ```
