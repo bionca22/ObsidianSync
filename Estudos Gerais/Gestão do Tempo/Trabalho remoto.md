@@ -1,0 +1,3 @@
+O trabalho remoto vem se tornando cada vez mais comum, seja de maneira esporádica, durante eventos e situações especiais, seja de maneira frequente, para os que viajam bastante a trabalho, por exemplo. **Quando o trabalho remoto é permanente, o chamamos de _home-office_, trabalho em casa.**
+
+Assista à animação a seguir para entender um pouco mais sobre essa modalidade e sobre como planejar seu tempo nessa situação.

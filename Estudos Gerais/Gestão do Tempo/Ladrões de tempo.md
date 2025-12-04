@@ -85,3 +85,39 @@ Depois de organizar a mente e trabalhar o foco, reduzir ao máximo os ladrões d
 Planejar é fundamental para manter a organização e garantir o cumprimento das responsabilidades assumidas. A partir do planejamento é que será possível criar um cronograma de trabalho, ou mesmo a agenda pessoal. **Quando não planejamos, corremos o risco de realizar muitas coisas, mas não chegar efetivamente a lugar nenhum. Percebemo-nos no fim do dia muito cansados, mas com a sensação de que não fizemos nada realmente útil e produtivo.**
 
 **Veja, a seguir, um exemplo prático de planejamento.**
+
+![[material_textual_matriz_GUT.pdf]]
+
+
+# Negociação de tempo
+
+Muitas coisas para fazer e surgiram novas demandas que podem atrapalhar seu planejamento e cronograma? Então é hora de negociar o tempo com as áreas e/ou pessoas envolvidas. Para ajudá-lo nesse processo, elaboramos nove pontos a serem observados.
+
+**Dados do tempo**
+Quanto tempo você precisa para realizar cada uma das tarefas que são de sua responsabilidade nesse processo? Tenha isso muito bem mapeado
+
+**Prioridades**
+Leve para essa conversa suas atividades listadas por prioridade. Isso é importante para que analisem juntos as prioridades e, se for o caso, mudem a ordem de realização de algo.
+
+**Agenda**
+Saiba exatamente como está sua agenda de trabalho e leve-a para essa conversa. Pois, se for o caso de fazer mudanças nela, vocês poderão construir isso juntos e com segurança.
+
+**Visão do processo**
+Conheça todas as etapas do processo para poder negociar. Só assim você saberá a margem de negociação que existe e terá argumentos para apresentar.
+
+**Escuta ativa**
+Escute atentamente, faça perguntas, compreenda.
+
+**Empatia**
+Para que tudo funcione como um reloginho é fundamental ter empatia com a outra área. Coloque-se no lugar deles e ajude-os a se colocarem no seu lugar também, com muita abertura e gentileza.
+
+**Comunicação direta**
+Converse abertamente sobre quais são as etapas do processo na sua área e informe o tempo que você gasta com cada uma delas. Você é o responsável por levar esse conhecimento à outra área, senão eles não têm como saber exatamente.
+
+**Foco no cliente**
+O mais importante não é a tarefa a ser realizada, mas o objetivo que será atingido. Para isso, manter o foco no cliente o tempo todo é o que fará com que vocês tomem as melhores decisões.
+
+**Flexibilidade**
+Para conciliar todas as tarefas de todas as áreas, com o volume de trabalho de cada uma, e, acima de tudo, focado na satisfação máxima do cliente, flexibilidade é a palavra-chave.
+
+Caso, depois dessa negociação, ainda aconteça algo que torne novamente necessário renegociar o tempo com as outras áreas, observem juntos onde foi o descompasso e trabalhem unidos para que nas próximas entregas isso não aconteça mais.
