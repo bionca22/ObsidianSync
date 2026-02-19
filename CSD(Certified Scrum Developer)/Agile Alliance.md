@@ -25,29 +25,34 @@ das variáveis de incerteza seja contida. (**Incerteza sobre os requisitos, grau
 
 **Ciclos de vida preditivos**
 Uma abordagem mais tradicional, com a maior parte do planejamento acontecendo no início e a execução ocorrendo em uma única vez, num processo sequencial.
+
+Para atingir essa abordagem, a equipe exige planos detalhados para saber o que entregar e como. Esses projetos são bem-sucedidos quando outras mudanças possíveis são restritas (por exemplo, mudanças de requisitos, membros da equipe do projeto mudam o que será entregue). Os líderes da equipe visam inimizar as mudanças do projeto preditivo. Quando a equipe cria requisitos e planos detalhados no início do projeto, consegue articular as restrições. 
+
 Esse Aproveitam tudo que é conhecido e comprovado. 
 Essa redução de incerteza e complexidade permite que as equipes
 segmentem o trabalho em uma sequência de agrupamentos previsíveis.
+
+| Análise | → | Design | → | Build | → | Teste | → | Entrega |
+|---------|---|--------|---|-------|---|-------|---|---------|
 
 
 **Ciclos de vida iterativos**
 Uma abordagem que permite o feedback sobre
 trabalho inacabado para melhorá-lo e modificá-lo.
-Aproveitam tudo que é conhecido e comprovadoEssa redução de incerteza e complexidade permite que as equipes
-segmentem o trabalho em uma sequência de agrupamentos previsíveis.
-
 Permitem o feedback sobre trabalho parcialmente concluído ou inacabado para melhorar e modificar esse trabalho.
-
 
 **Ciclo de vida incremental**
 Uma abordagem que fornece entregáveis
 (deliverables) finalizados que o cliente poderá usar imediatamente.
-Permitem o feedback sobre trabalho parcialmente concluído ou inacabado para melhorar e modificar esse trabalho.
+Fornecem entregáveis finalizados que o cliente poderá usar imediatamente.
+
 
 **Ciclo de vida ágil**
 Uma abordagem tanto iterativa como incremental para
 refinar itens de trabalho com entregas frequentes.
-Fornecem entregáveis finalizados que o cliente poderá usar imediatamente.
+Aproveitam de ambos os aspectos das características iterativas e incrementais. Quando as equipes usam abordagens ágeis, fazem
+iterações no produto para criar entregáveis finalizados. A equipe ganha feedback antecipado e proporciona visibilidade, confiança e controle do produto ao cliente. Como a equipe pode entregar o produto antes, o projeto pode fornecer um retorno sobre o investimento mais cedo, porque a equipe entrega o trabalho de maior valor primeiro.
+
 
 | Abordagem   | Requisitos | Atividades                                    | Entrega                     | Objetivo                                |
 | ----------- | ---------- | --------------------------------------------- | --------------------------- | --------------------------------------- |
