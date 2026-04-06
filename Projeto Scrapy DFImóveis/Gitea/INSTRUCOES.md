@@ -6,7 +6,7 @@ Esse comando cria remotamente um repositório no gitea e clona ele localmente j�
 
 #### Clonar repositório 
 ```bash
-git fork gitea:matheus/ScrapyImoveis.git
+git fork gitea:muser/ScrapyImoveis.git
 ```
 esse comando clona exatamente o projeto certo.
 ### Adicionar remotes
@@ -18,12 +18,12 @@ git remote -v
 
 Adicionar remote gitea
 ```bash
-git remote add origin gitea:bianca/teste.git
+git remote add origin gitea:user/teste.git
 ```
 
 Caso precise adicionar upstream
 ```bash
-git remote add upstream gitea:usuario/repositorio-original.git
+git remote add upstream gitea:user/repositorio-original.git
 ```
 
 Depois de adicionar primeiro commit, checar branches (locais e remotas):
@@ -39,5 +39,5 @@ git clone gitea:usuario/nome_repositorio.git
 
 clonar uma branch especifica
 ```bash
-git clone -b nome-branch --single-branch gitea:usuario/repositorio.git
+git clone -b nome-branch --single-branch gitea:user/repositorio.git
 ```
