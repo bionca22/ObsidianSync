@@ -36,7 +36,10 @@ http://<seu tolken>@<endereço do repositório já criado>.git
 
 Prontinho seu repositório já vai estar pronto para subir!
 
-> use ctrl + P para abrir o menu de pesquisa e digite "commit
+____
+### Enviando para o repositório 
+
+> use ctrl + P para abrir o menu de pesquisa e digite "Git". Procure por algo como  "commit-and-sync"
 
 _____
 
