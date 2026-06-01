@@ -69,4 +69,11 @@ git commit --amend --no-edit
 
 ---
 
-`git blame` 
+Voltar a um commit anterior 
+```
+git fetch
+```
+
+```
+git revert <número do commit>
+```
